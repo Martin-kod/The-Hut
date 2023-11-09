@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hut</title>
+</head>
+<body>
+    <h1>Bookings!</h1>
+    <table>
+    {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.last_name }}</td>
+            <td>{{ booking.email }}</td>
+            <td>
+                <a href="/edit/{{ booking.id }}">
+                    <button>Edit</button>
+                </a>
+            </td>
+            <td>
+                <a href="/delete/{{ booking.id }}">
+                    <button>Delete</button>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <a href="/thehut_booking">Book a table</a>
+</body>
+</html>
